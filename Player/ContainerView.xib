@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContainerView" customModule="Player" customModuleProvider="target">
+            <connections>
+                <outlet property="commentsTrackView" destination="THM-n0-MeZ" id="agE-S7-pd0"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="47y-7c-uZa"/>
+                <outlet property="playerControlsView" destination="uB8-3Y-9Aj" id="9ur-bN-zUl"/>
+                <outlet property="playerHeightLayoutConstraint" destination="dSf-ba-Xue" id="nd2-qH-51Q"/>
+                <outlet property="playerView" destination="tiu-uS-dXM" id="X1n-sR-PGn"/>
+                <outlet property="speedScrubber" destination="6j4-sf-ZrI" id="Xib-hu-J5P"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UIStackView">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="331"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1000" verticalCompressionResistancePriority="250" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YKr-la-riU">
+                    <rect key="frame" x="0.0" y="0.0" width="438" height="331"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiu-uS-dXM">
+                            <rect key="frame" x="0.0" y="0.0" width="438" height="251"/>
+                            <color key="backgroundColor" red="0.1566738154" green="0.55261932570000005" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THM-n0-MeZ">
+                            <rect key="frame" x="0.0" y="251" width="438" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.49599141791897627" blue="0.77683237183940834" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="gyT-hu-Yvr"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uB8-3Y-9Aj">
+                            <rect key="frame" x="0.0" y="291" width="438" height="20"/>
+                            <color key="backgroundColor" red="1" green="0.93333333330000001" blue="0.70588235290000001" alpha="0.96999999999999997" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="cXP-Xe-zdz"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6j4-sf-ZrI">
+                            <rect key="frame" x="0.0" y="311" width="438" height="20"/>
+                            <color key="backgroundColor" red="0.75214258222539132" green="1" blue="0.59305184276526957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="rOL-h8-b0v"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="tiu-uS-dXM" firstAttribute="height" relation="greaterThanOrEqual" secondItem="YKr-la-riU" secondAttribute="width" multiplier="9:16" id="dSf-ba-Xue"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ1-xV-3MJ">
+                    <rect key="frame" x="166.5" y="150.5" width="105" height="30"/>
+                    <state key="normal" title="Show Scrubber">
+                        <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="showSpeedScrubber:" destination="-1" eventType="touchUpInside" id="I8M-0i-syo"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="UQ1-xV-3MJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5gL-zs-9bJ"/>
+                <constraint firstItem="YKr-la-riU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9e9-BS-F6M"/>
+                <constraint firstItem="UQ1-xV-3MJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9gf-O9-af5"/>
+                <constraint firstAttribute="bottom" secondItem="YKr-la-riU" secondAttribute="bottom" id="J9B-4s-3l3"/>
+                <constraint firstItem="YKr-la-riU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SNh-JF-bP5"/>
+                <constraint firstAttribute="trailing" secondItem="YKr-la-riU" secondAttribute="trailing" id="zLY-kQ-29S"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="89.855072463768124" y="-433.59375"/>
+        </view>
+    </objects>
+</document>
