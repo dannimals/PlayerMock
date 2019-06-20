@@ -1,6 +1,12 @@
 
 import UIKit
 
+protocol ContainerViewDelegate: class {
+
+    func scrubberTapped()
+
+}
+
 class ContainerView: UIStackView, StoryboardNestable {
 
     enum ContentType {
@@ -10,11 +16,8 @@ class ContainerView: UIStackView, StoryboardNestable {
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var playerView: UIView!
-    @IBOutlet weak var commentsTrackView: UIView!
-    @IBOutlet weak var playerControlsView: UIView!
-    @IBOutlet weak var speedScrubber: UIView!
 
-    @IBOutlet weak var playerHeightLayoutConstraint: NSLayoutConstraint!
+    weak var delegate: ContainerViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,18 +26,6 @@ class ContainerView: UIStackView, StoryboardNestable {
     }
 
     func configure(contentType: ContentType) {
-        if contentType == .streamable {
-            removeConstraint(playerHeightLayoutConstraint)
-            playerHeightLayoutConstraint = playerView.heightAnchor.constraint(equalTo: widthAnchor, multiplier: CGFloat(9/16))
-            playerHeightLayoutConstraint.isActive = true
-        }
-
-        commentsTrackView.isHidden = contentType == .image
-        playerControlsView.isHidden = contentType == .image
-    }
-
-    @IBAction func showSpeedScrubber(_ sender: Any) {
-        speedScrubber.isHidden = !speedScrubber.isHidden
     }
 
 }

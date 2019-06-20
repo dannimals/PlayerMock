@@ -18,31 +18,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="FUU-Fh-biN">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FUU-Fh-biN">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7l-S0-qjm" customClass="ContainerView" customModule="Player" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxJ-T4-i4x">
+                                        <rect key="frame" x="0.0" y="233" width="414" height="20"/>
+                                        <color key="backgroundColor" red="0.67450980390000004" green="0.83137254900000002" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="h4s-ko-K7k"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxG-Qj-Kcu">
+                                        <rect key="frame" x="0.0" y="253" width="414" height="40"/>
+                                        <color key="backgroundColor" red="0.65862928021196376" green="0.55884918586684629" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="iHi-k9-Urh"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dD-m7-dcP">
+                                        <rect key="frame" x="0.0" y="293" width="414" height="20"/>
+                                        <color key="backgroundColor" red="0.75214258219999997" green="1" blue="0.59305184280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="oeL-zj-e1p"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVL-Dj-QLX">
-                                        <rect key="frame" x="0.0" y="233" width="414" height="585"/>
+                                        <rect key="frame" x="0.0" y="313" width="414" height="505"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="v7l-S0-qjm" firstAttribute="height" secondItem="FUU-Fh-biN" secondAttribute="width" multiplier="9:16" id="uHA-FX-bNx"/>
+                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqY-nL-kX4">
+                                <rect key="frame" x="126" y="302" width="162" height="30"/>
+                                <state key="normal" title="Toggle Speed Scrubber"/>
+                                <connections>
+                                    <action selector="toggleSpeedScrubber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PwJ-xa-FUs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FUU-Fh-biN" secondAttribute="trailing" id="1Rn-Se-dgT"/>
+                            <constraint firstItem="aqY-nL-kX4" firstAttribute="centerY" secondItem="sxG-Qj-Kcu" secondAttribute="centerY" id="EGe-he-mfc"/>
                             <constraint firstItem="FUU-Fh-biN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LGl-oc-5xZ"/>
+                            <constraint firstItem="aqY-nL-kX4" firstAttribute="centerX" secondItem="sxG-Qj-Kcu" secondAttribute="centerX" id="Q2r-Pd-ipy"/>
                             <constraint firstItem="FUU-Fh-biN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Wu4-1k-wbY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FUU-Fh-biN" secondAttribute="bottom" id="tz6-B9-uZx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="commentTrack" destination="WxJ-T4-i4x" id="kU0-1I-Nje"/>
                         <outlet property="containerView" destination="v7l-S0-qjm" id="fhU-0d-xM5"/>
+                        <outlet property="heightConstraint" destination="uHA-FX-bNx" id="7dA-se-ZWQ"/>
+                        <outlet property="playerControlsView" destination="sxG-Qj-Kcu" id="3fM-1b-bXM"/>
+                        <outlet property="scrubberView" destination="5dD-m7-dcP" id="8H0-AX-plO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
